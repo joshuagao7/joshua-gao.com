@@ -55,10 +55,6 @@ export default function KnowledgeGraph({
   searchQuery = '',
   selectedTags = [],
 }: KnowledgeGraphProps) {
-  const [graphData, setGraphData] = useState<{
-    nodes: GraphNode[]
-    links: GraphLink[]
-  }>({ nodes: [], links: [] })
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null)
   const [hoveredNode, setHoveredNode] = useState<string | null>(null)
   const [graphDimensions, setGraphDimensions] = useState({ width: 600, height: 600 })
@@ -103,14 +99,12 @@ export default function KnowledgeGraph({
     })
   }, [papers, searchQuery, selectedTags])
 
-  // Build graph data
-  useEffect(() => {
+  const graphData = useMemo(() => {
     const nodes: GraphNode[] = filteredPapers.map((paper) => {
       const connectionCount = paper.connections.filter((connId) =>
         filteredPapers.some((p) => p.id === connId)
       ).length
 
-      // Determine color based on primary tag
       const primaryTag = paper.tags[0] || 'AI'
       const color = tagColors[primaryTag] || '#667eea'
 
@@ -122,7 +116,7 @@ export default function KnowledgeGraph({
         url: paper.url,
         abstract: paper.abstract,
         tags: paper.tags,
-        val: Math.max(3, connectionCount * 2 + 3), // Node size based on connections
+        val: Math.max(3, connectionCount * 2 + 3),
         color,
       }
     })
@@ -139,7 +133,7 @@ export default function KnowledgeGraph({
       })
     })
 
-    setGraphData({ nodes, links })
+    return { nodes, links }
   }, [filteredPapers])
 
   const handleNodeClick = useCallback(

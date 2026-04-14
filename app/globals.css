@@ -34,7 +34,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
   padding: 0.4rem 0 0.55rem;
 }
 
@@ -52,10 +51,6 @@ body {
 
 .fold.awards {
   max-width: 34rem;
-}
-
-.fold.books {
-  max-width: 28rem;
 }
 
 .fold.reading {
@@ -86,17 +81,6 @@ body {
 
 .fold-summary {
   display: block;
-}
-
-.fold-summary::after {
-  content: ' ▸';
-  font-size: 0.85em;
-  color: #666;
-  margin-left: 0.25rem;
-}
-
-details[open].fold > .fold-summary::after {
-  content: ' ▾';
 }
 
 .fold-body {
@@ -178,29 +162,60 @@ details[open].fold {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.project-item {
+  text-align: left;
 }
 
 .project-slot {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   width: 100%;
   background: #f8f8f8;
   border: 1px solid rgba(17, 17, 17, 0.12);
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease;
 }
 
-.project-status {
-  font-size: clamp(0.8rem, 1.6vw, 0.95rem);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.project-slot:hover {
+  transform: scale(1.015);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-title {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: clamp(0.72rem, 1.45vw, 0.82rem);
+  line-height: 1.35;
+  color: #222;
+}
+
+.project-year {
+  display: block;
+  margin-top: 0.15rem;
   color: #555;
-  border: 1px solid rgba(17, 17, 17, 0.18);
-  background: rgba(255, 255, 255, 0.8);
-  padding: 0.35rem 0.65rem;
+  font-size: clamp(0.68rem, 1.35vw, 0.76rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 520px) {
@@ -242,4 +257,18 @@ details[open].fold {
   color: #555;
   font-style: italic;
   margin-top: 0.2rem;
+}
+
+.books-appearance {
+  font-weight: 600;
+  margin-left: 0.08em;
+}
+
+.books-footnote {
+  margin-top: 1.1rem;
+  margin-bottom: 0;
+  font-size: clamp(0.78rem, 1.5vw, 0.88rem);
+  color: #555;
+  font-style: italic;
+  line-height: 1.45;
 }

@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const sports = [
   'Bouldering',
   'Golf',
@@ -34,19 +36,6 @@ const awards = [
   { label: 'Gore Innovation Excellence Award', year: '2019' },
 ]
 
-const books = [
-  {
-    title: 'Principles of Cartel Disruption',
-    author: 'David Radlo',
-    href: 'https://www.barnesandnoble.com/w/principles-of-cartel-disruption-david-radlo/1137052973',
-  },
-  {
-    title: 'Diary of a Confused Educator',
-    author: 'Ashanti Branch',
-    href: 'https://www.barnesandnoble.com/w/diary-of-a-confused-educator-ashanti-branch/1147452508',
-  },
-]
-
 const readingList = [
   {
     title: 'Analysis I',
@@ -54,49 +43,21 @@ const readingList = [
     href: 'https://link.springer.com/book/10.1007/978-981-19-7261-4',
   },
   {
-    title: 'Designing Data-Intensive Applications',
-    author: 'Martin Kleppmann',
-    href: 'https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/',
-  },
-  {
-    title: 'Spectral and Algebraic Graph Theory',
-    author: 'Daniel Spielman',
-    href: 'http://cs-www.cs.yale.edu/homes/spielman/sagt/sagt.pdf',
-  },
-  {
-    title: 'Linear Algebra and Learning from Data',
-    author: 'Gilbert Strang',
-    href: 'https://math.mit.edu/~gs/learningfromdata/',
-  },
-  {
-    title: "Poor Charlie's Almanack",
-    author: 'Charlie Munger',
-    href: 'https://www.stripe.press/poor-charlies-almanack',
-  },
-  {
-    title: 'Shoe Dog',
-    author: 'Phil Knight',
-    href: 'https://www.barnesandnoble.com/w/shoe-dog-phil-knight/1120401492',
-  },
-  {
-    title: 'Pioneering Portfolio Management',
-    author: 'David Swensen',
-    href: 'https://yalebooks.yale.edu/book/9780300124978/pioneering-portfolio-management/',
-  },
-  {
-    title: 'Valuation: Measuring and Managing the Value of Companies',
-    author: 'McKinsey & Company',
-    href: 'https://www.wiley.com/en-us/Valuation%3A+Measuring+and+Managing+the+Value+of+Companies%2C+7th+Edition-p-9781119618817',
-  },
-  {
     title: 'Chip War: The Fight for the World’s Most Critical Technology',
     author: 'Chris Miller',
     href: 'https://www.barnesandnoble.com/w/chip-war-chris-miller/1140630504',
   },
   {
-    title: 'The Holy Bible',
-    author: 'English Standard Version',
-    href: 'https://www.crossway.org/bibles/esv-study-bible-hardcover/',
+    title: 'Designing Data-Intensive Applications',
+    author: 'Martin Kleppmann',
+    href: 'https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/',
+  },
+  {
+    title: 'Diary of a Confused Educator',
+    author: 'Ashanti Branch',
+    href: 'https://www.barnesandnoble.com/w/diary-of-a-confused-educator-ashanti-branch/1147452508',
+    authorConnection: true,
+    mentionedInBook: true,
   },
   {
     title:
@@ -104,31 +65,88 @@ const readingList = [
     author: 'Anonymous hedge fund manager & Keith Gessen',
     href: 'https://www.barnesandnoble.com/w/diary-of-a-very-bad-year-anonymous-hedge-fund-manager/1103372664',
   },
+  {
+    title: "In the Roundest of Places: One Teacher's Journey",
+    author: 'Richard Lydon',
+    href: 'https://www.amazon.com/Roundest-Places-One-Teachers-Journey/dp/1494977788',
+    authorConnection: true,
+  },
+  {
+    title: 'Linear Algebra and Learning from Data',
+    author: 'Gilbert Strang',
+    href: 'https://math.mit.edu/~gs/learningfromdata/',
+  },
+  {
+    title: 'Pioneering Portfolio Management',
+    author: 'David Swensen',
+    href: 'https://yalebooks.yale.edu/book/9780300124978/pioneering-portfolio-management/',
+  },
+  {
+    title: "Poor Charlie's Almanack",
+    author: 'Charlie Munger',
+    href: 'https://www.stripe.press/poor-charlies-almanack',
+  },
+  {
+    title: 'Principles of Cartel Disruption',
+    author: 'David Radlo',
+    href: 'https://www.barnesandnoble.com/w/principles-of-cartel-disruption-david-radlo/1137052973',
+    authorConnection: true,
+    mentionedInBook: true,
+  },
+  {
+    title: 'Shoe Dog',
+    author: 'Phil Knight',
+    href: 'https://www.barnesandnoble.com/w/shoe-dog-phil-knight/1120401492',
+  },
+  {
+    title: 'Spectral and Algebraic Graph Theory',
+    author: 'Daniel Spielman',
+    href: 'http://cs-www.cs.yale.edu/homes/spielman/sagt/sagt.pdf',
+  },
+  {
+    title: 'The Holy Bible',
+    author: 'English Standard Version',
+    href: 'https://www.crossway.org/bibles/esv-study-bible-hardcover/',
+  },
+  {
+    title: 'Value: The Four Cornerstones of Corporate Finance',
+    author: 'Tim Koller, Richard Dobbs & Bill Huyett',
+    href: 'https://www.amazon.com/Value-Four-Cornerstones-Corporate-Finance/dp/0470424605',
+  },
 ]
 
-const papers = [
+const researchProjects = [
   {
     title:
       'Eigenjumps: analyzing human movement on tactile sensors via singular value decomposition and other linear algebra techniques',
-    meta: 'Final write-up · PDF',
+    year: '2025',
     href: '/papers/eigenjumps.pdf',
+    image: '/projects/eigenjumps.png',
   },
   {
     title: 'Pressure Plates: Can Computers be Taught to Detect Jumps?',
-    meta: 'Thesis · PDF',
+    year: '2025',
     href: '/papers/pressure-plates.pdf',
-  },
-]
-
-const patents = [
-  {
-    title: 'U.S. Patent — Force Sensors for Motion Assessment',
-    meta: 'Inventors: Joshua Gao, Dr. Lawrence Wilen · Assignee: Yale University',
+    image: '/projects/pressure-plates.png',
   },
   {
     title:
-      'U.S. Patent — Method, Apparatus, and Systems for Fire Suppression Using Sound Waves',
-    meta: 'Inventor: Joshua Gao',
+      'Vault One Mark I: Internal Validation Study of Uncalibrated Force-Sensing Mat for Vertical Jump Assessment',
+    year: '2025',
+    href: '/papers/vault-one-mark-i.pdf',
+    image: '/projects/vault-one-mark-i.png',
+  },
+  {
+    title: 'U.S. Patent — Force Sensors for Motion Assessment',
+    year: '2025',
+    href: '/papers/patent-force-sensors.pdf',
+    image: '/projects/patent-force-sensors.png',
+  },
+  {
+    title: 'U.S. Patent — Method, Apparatus, and Systems for Fire Suppression Using Sound Waves',
+    year: '2020',
+    href: '/papers/patent-fire-sound.pdf',
+    image: '/projects/patent-fire-sound.png',
   },
 ]
 
@@ -252,51 +270,31 @@ export default function Home() {
     <main className="page">
       <h1 className="name">Joshua Gao</h1>
 
-      <details className="fold projects" aria-label="Projects" open>
-        <summary className="fold-summary">
-          <span className="section-label">Projects</span>
-        </summary>
-        <div className="fold-body">
-          <div className="projects-grid">
-            {[1, 2, 3, 4].map((n) => (
-              <div
-                key={n}
+      <section className="fold projects" aria-label="Projects">
+        <div className="projects-grid">
+          {researchProjects.map((project) => (
+            <article key={project.title} className="project-item">
+              <a
                 className="project-slot"
-                aria-label={`Project image ${n} (placeholder)`}
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.title} (opens in new tab)`}
               >
-                <span className="project-status">In Development</span>
-              </div>
-            ))}
-          </div>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="project-image"
+                  sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 25vw"
+                />
+              </a>
+              <span className="project-title">{project.title}</span>
+              <span className="project-year">{project.year}</span>
+            </article>
+          ))}
         </div>
-      </details>
-
-      <details className="fold papers" aria-label="Publications">
-        <summary className="fold-summary">
-          <span className="section-label">Publications</span>
-        </summary>
-        <div className="fold-body">
-          <p className="subsection-label">Papers</p>
-          <ul className="books-list">
-            {papers.map((paper) => (
-              <li key={paper.href}>
-                <a href={paper.href} target="_blank" rel="noopener noreferrer">
-                  <span className="books-title">{paper.title}</span>
-                  <span className="books-author">{paper.meta}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-          <ul className="books-list">
-            {patents.map((patent) => (
-              <li key={patent.title}>
-                <span className="books-title">{patent.title}</span>
-                <span className="books-author">{patent.meta}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </details>
+      </section>
 
       <details className="fold awards" aria-label="Awards and fellowships">
         <summary className="fold-summary">
@@ -308,24 +306,6 @@ export default function Home() {
               <li key={item.label}>
                 <span className="awards-title">{item.label}</span>
                 <span className="awards-year">{item.year}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </details>
-
-      <details className="fold books" aria-label="Books">
-        <summary className="fold-summary">
-          <span className="section-label">I appear in</span>
-        </summary>
-        <div className="fold-body">
-          <ul className="books-list">
-            {books.map((book) => (
-              <li key={book.href}>
-                <a href={book.href} target="_blank" rel="noopener noreferrer">
-                  <span className="books-title">{book.title}</span>
-                  <span className="books-author">{book.author}</span>
-                </a>
               </li>
             ))}
           </ul>
@@ -358,13 +338,38 @@ export default function Home() {
           <ul className="books-list">
             {readingList.map((item) => (
               <li key={item.href}>
-                <a href={item.href} target="_blank" rel="noopener noreferrer">
-                  <span className="books-title">{item.title}</span>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={
+                    item.authorConnection
+                      ? item.mentionedInBook
+                        ? `${item.title} — ${item.author} (personal connection to the author; Joshua Gao may appear in this book)`
+                        : `${item.title} — ${item.author} (personal connection to the author)`
+                      : `${item.title} — ${item.author}`
+                  }
+                >
+                  <span className="books-title">
+                    {item.title}
+                    {item.authorConnection ? (
+                      <span className="books-appearance" aria-hidden="true">
+                        *
+                      </span>
+                    ) : null}
+                  </span>
                   <span className="books-author">{item.author}</span>
                 </a>
               </li>
             ))}
           </ul>
+          <p className="books-footnote">
+            {
+              "An asterisk means my personal life has intersected with the author's in some way, and I may appear in the book."
+            }
+            {
+            }
+          </p>
         </div>
       </details>
 
@@ -373,7 +378,7 @@ export default function Home() {
           <span className="section-label">Sports</span>
         </summary>
         <div className="fold-body">
-          <p className="sports-note">Ranked by skill and time spent</p>
+          <p className="sports-note"></p>
           <ol className="sports-list">
             {sports.map((sport) => (
               <li key={sport}>{sport}</li>
