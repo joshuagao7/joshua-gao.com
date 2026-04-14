@@ -131,8 +131,8 @@ const yaleCoursesEconomics: YaleFavoriteCourse[] = [
     href: 'https://catalog.yale.edu/search/?P=ECON%202122',
   },
   {
-    code: 'ECON 2123',
-    title: 'Intermediate Data Analysis and Econometrics',
+    code: 'ECON 2123 / ECON 117',
+    title: 'Introductory Econometrics',
     href: 'https://catalog.yale.edu/search/?P=ECON%202123',
   },
   {
@@ -515,37 +515,6 @@ export default function Home() {
         </div>
       </details>
 
-      <details className="fold classes" aria-label="Yale College">
-        <summary className="fold-summary">
-          <span className="section-label">Yale College</span>
-        </summary>
-        <div className="fold-body">
-          <div className="yale-courses-grid">
-            <YaleCourseBucket label="Economics" bucketId="econ" courses={yaleCoursesEconomics} />
-            <YaleCourseBucket label="Engineering" bucketId="eng" courses={yaleCoursesEngineering} />
-            <YaleCourseBucket
-              label="Further exploration"
-              bucketId="explore"
-              courses={yaleCoursesExploration}
-            />
-          </div>
-          <p className="classes-footnote">
-            Each line shows Yale College Programs of Study–style numbers (four digits where the bulletin uses
-            them). Cross-listed subjects are written out in full (for example APHY 4700 / ECON 4446). My
-            transcript sometimes used older listings (ECON 361 for corporate finance, MENG 280 for strength,
-            THST 241 for classical Hollywood); the codes here follow the current catalog. In-progress courses
-            (ARCH 2000, ECON 2121, ECON 4450, ECON 6672) may appear without grades until the term posts. APHY
-            4700 is intentionally listed under both economics and engineering; that row still links to a public
-            departmental syllabus PDF. For syllabi by term, try{' '}
-            <a href="https://coursetable.com/" target="_blank" rel="noopener noreferrer">
-              CourseTable
-            </a>
-            . General physics lab was taken as PHYS 166L and PHYS 165L on the transcript (PHYS 1660L / PHYS
-            1650L in the current catalog).
-          </p>
-        </div>
-      </details>
-
       <details className="fold links" aria-label="Links">
         <summary className="fold-summary">
           <span className="section-label">Links</span>
@@ -601,6 +570,37 @@ export default function Home() {
             {
               "An asterisk means my personal life has intersected with the author's in some way, and I may appear in the book."
             }
+          </p>
+        </div>
+      </details>
+
+      <details className="fold classes" aria-label="Yale College">
+        <summary className="fold-summary">
+          <span className="section-label">Yale College</span>
+        </summary>
+        <div className="fold-body">
+          <div className="yale-courses-grid">
+            <YaleCourseBucket label="Economics" bucketId="econ" courses={yaleCoursesEconomics} />
+            <YaleCourseBucket label="Engineering" bucketId="eng" courses={yaleCoursesEngineering} />
+            <YaleCourseBucket
+              label="Further exploration"
+              bucketId="explore"
+              courses={yaleCoursesExploration}
+            />
+          </div>
+          <p className="classes-footnote">
+            Each line shows Yale College Programs of Study–style numbers (four digits where the bulletin uses
+            them). Cross-listed subjects are written out in full (for example APHY 4700 / ECON 4446). My
+            transcript sometimes used older listings (ECON 361 for corporate finance, MENG 280 for strength,
+            THST 241 for classical Hollywood); the codes here follow the current catalog. In-progress courses
+            (ARCH 2000, ECON 2121, ECON 4450, ECON 6672) may appear without grades until the term posts. APHY
+            4700 is intentionally listed under both economics and engineering; that row still links to a public
+            departmental syllabus PDF. For syllabi by term, try{' '}
+            <a href="https://coursetable.com/" target="_blank" rel="noopener noreferrer">
+              CourseTable
+            </a>
+            . General physics lab was taken as PHYS 166L and PHYS 165L on the transcript (PHYS 1660L / PHYS
+            1650L in the current catalog).
           </p>
         </div>
       </details>
