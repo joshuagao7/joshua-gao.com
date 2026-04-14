@@ -106,15 +106,149 @@ const booksList = [
  * catalog search (often the current four-digit listing). In-progress lines on the transcript may omit
  * until the term posts.
  */
-const favoriteYaleClasses: {
+type YaleFavoriteCourse = {
   code: string
   title: string
   href: string
-}[] = [
+}
+
+const aphyStatisticalMethods: YaleFavoriteCourse = {
+  code: 'APHY 4700',
+  title: 'Statistical Methods with Applications in Science and Finance',
+  href: 'https://volga.eng.yale.edu/sites/default/files/files/Syllabus-aphy470-2019.pdf',
+}
+
+/** Twelve economics-focused courses (APHY 4700 also appears under engineering). */
+const yaleCoursesEconomics: YaleFavoriteCourse[] = [
+  {
+    code: 'ECON 2121',
+    title: 'Intermediate Microeconomics',
+    href: 'https://catalog.yale.edu/search/?P=ECON%202121',
+  },
+  {
+    code: 'ECON 122',
+    title: 'Intermediate Macroeconomics',
+    href: 'https://catalog.yale.edu/search/?P=ECON%20122',
+  },
+  {
+    code: 'ECON 117',
+    title: 'Introduction to Data Analysis and Econometrics',
+    href: 'https://catalog.yale.edu/search/?P=ECON%20117',
+  },
+  {
+    code: 'ECON 159',
+    title: 'Game Theory',
+    href: 'https://catalog.yale.edu/search/?P=ECON%20159',
+  },
+  {
+    code: 'ECON 251',
+    title: 'Financial Economics',
+    href: 'https://catalog.yale.edu/search/?P=ECON%20251',
+  },
+  {
+    code: 'ECON 361',
+    title: 'Corporate Finance',
+    href: 'https://catalog.yale.edu/search/?P=ECON%20361',
+  },
+  {
+    code: 'ECON 4456',
+    title: 'Private Equity Investing',
+    href: 'https://catalog.yale.edu/search/?P=ECON%204456',
+  },
+  {
+    code: 'ECON 4450',
+    title: 'Investment Analysis',
+    href: 'https://catalog.yale.edu/search/?P=ECON%204450',
+  },
   {
     code: 'ECON 6672',
     title: 'Behavioral Finance',
     href: 'https://catalog.yale.edu/search/?P=ECON%206672',
+  },
+  {
+    code: 'MGT 612',
+    title: 'Social Entrepreneurship Lab',
+    href: 'https://catalog.yale.edu/search/?P=MGT%20612',
+  },
+  {
+    code: 'MATH 222',
+    title: 'Linear Algebra with Applications',
+    href: 'https://catalog.yale.edu/search/?P=MATH%20222',
+  },
+  aphyStatisticalMethods,
+]
+
+/** Twelve engineering-focused courses (APHY 4700 cross-listed here from economics). */
+const yaleCoursesEngineering: YaleFavoriteCourse[] = [
+  {
+    code: 'ENAS 118',
+    title: 'Introduction to Engineering, Innovation, and Design',
+    href: 'https://catalog.yale.edu/search/?P=ENAS%201180',
+  },
+  {
+    code: 'ENAS 130',
+    title: 'Introduction to Computing for Engineers and Scientists',
+    href: 'https://catalog.yale.edu/search/?P=ENAS%201300',
+  },
+  {
+    code: 'MATH 120',
+    title: 'Calculus of Functions of Several Variables (multivariable calculus)',
+    href: 'https://catalog.yale.edu/search/?P=MATH%201200',
+  },
+  {
+    code: 'PHYS 180 & PHYS 181',
+    title: 'University Physics (year sequence)',
+    href: 'https://catalog.yale.edu/search/?P=PHYS%201800',
+  },
+  {
+    code: 'PHYS 165L & PHYS 166L',
+    title: 'General Physics Laboratory',
+    href: 'https://catalog.yale.edu/search/?P=PHYS%201650L',
+  },
+  {
+    code: 'ENAS 194',
+    title: 'Ordinary and Partial Differential Equations with Applications',
+    href: 'https://catalog.yale.edu/search/?P=ENAS%20194',
+  },
+  {
+    code: 'MENG 280',
+    title: 'Mechanical Engineering I: Strength and Deformation of Mechanical Elements',
+    href: 'https://catalog.yale.edu/search/?P=MENG%20280',
+  },
+  {
+    code: 'MENG 400',
+    title: 'Computer-Aided Engineering',
+    href: 'https://catalog.yale.edu/search/?P=MENG%20400',
+  },
+  {
+    code: 'MENG 211',
+    title: 'Thermodynamics for Mechanical Engineers',
+    href: 'https://catalog.yale.edu/search/?P=MENG%20211',
+  },
+  {
+    code: 'MENG 3422',
+    title: 'Mechanical Engineering II: Fluid Mechanics',
+    href: 'https://catalog.yale.edu/search/?P=MENG%203422',
+  },
+  {
+    code: 'MENG 383',
+    title: 'Mechanical Engineering III: Dynamics',
+    href: 'https://catalog.yale.edu/search/?P=MENG%20383',
+  },
+  aphyStatisticalMethods,
+]
+
+/** Language, arts, writing, and advanced math not placed in the econ or engineering buckets above. */
+const yaleCoursesExploration: YaleFavoriteCourse[] = [
+  {
+    code: 'MATH 115',
+    title: 'Calculus of Functions of One Variable II',
+    href: 'https://catalog.yale.edu/search/?P=MATH%201150',
+  },
+  {
+    code: 'MATH 232 / MATH 2320',
+    title: 'Advanced Linear Algebra with Applications',
+    href: 'https://catalog.yale.edu/search/?P=MATH%202320',
   },
   {
     code: 'ARCH 2000',
@@ -137,99 +271,9 @@ const favoriteYaleClasses: {
     href: 'https://catalog.yale.edu/search/?P=THST%20241',
   },
   {
-    code: 'MATH 232 / MATH 2320',
-    title: 'Advanced Linear Algebra with Applications',
-    href: 'https://catalog.yale.edu/search/?P=MATH%202320',
-  },
-  {
-    code: 'APHY 4700',
-    title: 'Statistical Methods with Applications in Science and Finance',
-    href: 'https://volga.eng.yale.edu/sites/default/files/files/Syllabus-aphy470-2019.pdf',
-  },
-  {
-    code: 'PHYS 180 & PHYS 181',
-    title: 'University Physics (year sequence)',
-    href: 'https://catalog.yale.edu/search/?P=PHYS%201800',
-  },
-  {
-    code: 'MATH 120',
-    title: 'Calculus of Functions of Several Variables (multivariable calculus)',
-    href: 'https://catalog.yale.edu/search/?P=MATH%201200',
-  },
-  {
-    code: 'ECON 4456',
-    title: 'Private Equity Investing',
-    href: 'https://catalog.yale.edu/search/?P=ECON%204456',
-  },
-  {
-    code: 'ECON 4450',
-    title: 'Investment Analysis',
-    href: 'https://catalog.yale.edu/search/?P=ECON%204450',
-  },
-  {
-    code: 'ENAS 118',
-    title: 'Introduction to Engineering, Innovation, and Design',
-    href: 'https://catalog.yale.edu/search/?P=ENAS%201180',
-  },
-  {
     code: 'ENGL 450',
     title: 'Daily Themes',
     href: 'https://catalog.yale.edu/search/?P=ENGL%203450',
-  },
-  {
-    code: 'ECON 159',
-    title: 'Game Theory',
-    href: 'https://catalog.yale.edu/search/?P=ECON%20159',
-  },
-  {
-    code: 'ECON 251',
-    title: 'Financial Economics',
-    href: 'https://catalog.yale.edu/search/?P=ECON%20251',
-  },
-  {
-    code: 'ECON 361',
-    title: 'Corporate Finance',
-    href: 'https://catalog.yale.edu/search/?P=ECON%20361',
-  },
-  {
-    code: 'ECON 2121',
-    title: 'Intermediate Microeconomics',
-    href: 'https://catalog.yale.edu/search/?P=ECON%202121',
-  },
-  {
-    code: 'ECON 122',
-    title: 'Intermediate Macroeconomics',
-    href: 'https://catalog.yale.edu/search/?P=ECON%20122',
-  },
-  {
-    code: 'MGT 612',
-    title: 'Social Entrepreneurship Lab',
-    href: 'https://catalog.yale.edu/search/?P=MGT%20612',
-  },
-  {
-    code: 'MENG 3422',
-    title: 'Mechanical Engineering II: Fluid Mechanics',
-    href: 'https://catalog.yale.edu/search/?P=MENG%203422',
-  },
-  {
-    code: 'MENG 211',
-    title: 'Thermodynamics for Mechanical Engineers',
-    href: 'https://catalog.yale.edu/search/?P=MENG%20211',
-  },
-  {
-    code: 'ENAS 194',
-    title: 'Ordinary and Partial Differential Equations with Applications',
-    href: 'https://catalog.yale.edu/search/?P=ENAS%20194',
-  },
-  {
-    code: 'MENG 280',
-    title: 'Mechanical Engineering I: Strength and Deformation of Mechanical Elements',
-    href: 'https://catalog.yale.edu/search/?P=MENG%20280',
-  },
-  {
-    code: 'MENG 383',
-    title: 'Mechanical Engineering III: Dynamics',
-    href: 'https://catalog.yale.edu/search/?P=MENG%20383',
   },
   {
     code: 'SPAN 110',
@@ -246,37 +290,33 @@ const favoriteYaleClasses: {
     title: 'Intermediate Spanish I',
     href: 'https://catalog.yale.edu/search/?P=SPAN%20130',
   },
-  {
-    code: 'PHYS 165L & PHYS 166L',
-    title: 'General Physics Laboratory',
-    href: 'https://catalog.yale.edu/search/?P=PHYS%201650L',
-  },
-  {
-    code: 'MATH 115',
-    title: 'Calculus of Functions of One Variable II',
-    href: 'https://catalog.yale.edu/search/?P=MATH%201150',
-  },
-  {
-    code: 'MATH 222',
-    title: 'Linear Algebra with Applications',
-    href: 'https://catalog.yale.edu/search/?P=MATH%20222',
-  },
-  {
-    code: 'ECON 117',
-    title: 'Introduction to Data Analysis and Econometrics',
-    href: 'https://catalog.yale.edu/search/?P=ECON%20117',
-  },
-  {
-    code: 'MENG 400',
-    title: 'Computer-Aided Engineering',
-    href: 'https://catalog.yale.edu/search/?P=MENG%20400',
-  },
-  {
-    code: 'ENAS 130',
-    title: 'Introduction to Computing for Engineers and Scientists',
-    href: 'https://catalog.yale.edu/search/?P=ENAS%201300',
-  },
 ]
+
+function YaleCourseBucket({
+  label,
+  bucketId,
+  courses,
+}: {
+  label: string
+  bucketId: string
+  courses: YaleFavoriteCourse[]
+}) {
+  return (
+    <>
+      <p className="subsection-label">{label}</p>
+      <ul className="books-list">
+        {courses.map((item) => (
+          <li key={`${bucketId}-${item.code}-${item.title}`}>
+            <a href={item.href} target="_blank" rel="noopener noreferrer">
+              <span className="books-title">{item.title}</span>
+              <span className="books-author">{item.code}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}
 
 const researchProjects = [
   {
@@ -480,23 +520,21 @@ export default function Home() {
           <span className="section-label">Yale College</span>
         </summary>
         <div className="fold-body">
-          <ul className="books-list">
-            {favoriteYaleClasses.map((item) => (
-              <li key={`${item.code}-${item.title}`}>
-                <a href={item.href} target="_blank" rel="noopener noreferrer">
-                  <span className="books-title">{item.title}</span>
-                  <span className="books-author">{item.code}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <YaleCourseBucket label="Economics" bucketId="econ" courses={yaleCoursesEconomics} />
+          <YaleCourseBucket label="Engineering" bucketId="eng" courses={yaleCoursesEngineering} />
+          <YaleCourseBucket
+            label="Further exploration"
+            bucketId="explore"
+            courses={yaleCoursesExploration}
+          />
           <p className="classes-footnote">
             Subject and course numbers match my Yale transcript for completed work; in-progress lines (for
             example ARCH 2000, ECON 2121, ECON 4450, ECON 6672) appear on the transcript without grades until
             the term closes. Yale’s bulletin often lists four-digit successors (ENAS 1180 for ENAS 118, MATH
             1200 for MATH 120, and so on); links use catalog search and may open the updated listing. Corporate
             finance is ECON 361 on my transcript (the economics department has also used ECON 3361 in the
-            catalog for this material). Statistical methods still links to a public departmental syllabus PDF.
+            catalog for this material). APHY 4700 (statistical methods) is intentionally listed under both
+            economics and engineering. Statistical methods still links to a public departmental syllabus PDF.
             For syllabi by term, try{' '}
             <a href="https://coursetable.com/" target="_blank" rel="noopener noreferrer">
               CourseTable
