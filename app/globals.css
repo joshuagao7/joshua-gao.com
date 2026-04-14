@@ -65,6 +65,10 @@ body {
   max-width: 36rem;
 }
 
+.fold.classes {
+  max-width: 36rem;
+}
+
 .fold > summary {
   list-style: none;
   cursor: pointer;
@@ -247,4 +251,23 @@ details[open].fold {
   color: #555;
   font-style: italic;
   line-height: 1.45;
+}
+
+.classes-footnote {
+  margin-top: 1.1rem;
+  margin-bottom: 0;
+  font-size: clamp(0.78rem, 1.5vw, 0.88rem);
+  color: #555;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.classes-footnote a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.classes-footnote a:hover {
+  color: #111;
 }

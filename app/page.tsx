@@ -101,6 +101,69 @@ const booksList = [
   },
 ]
 
+/** Yale catalog / CourseTable–aligned codes; economics seminars use current YCPS numbering. */
+const favoriteYaleClasses: {
+  code: string
+  title: string
+  href: string
+}[] = [
+  {
+    code: 'MGT 641',
+    title: 'Behavioral Finance',
+    href: 'https://catalog.yale.edu/search/?P=MGT%20641',
+  },
+  {
+    code: 'ARCH 2000',
+    title: 'Scales of Design',
+    href: 'https://catalog.yale.edu/search/?P=ARCH%202000',
+  },
+  {
+    code: 'ART 1838',
+    title: 'Digital Photography: Seeing in Color',
+    href: 'https://catalog.yale.edu/search/?P=ART%201838',
+  },
+  {
+    code: 'FILM 1620 / ART 1942',
+    title: 'Introductory Documentary Filmmaking',
+    href: 'https://catalog.yale.edu/search/?P=FILM%201620',
+  },
+  {
+    code: 'FILM 2320',
+    title: 'Classical Hollywood Narrative, 1920–1960',
+    href: 'https://catalog.yale.edu/search/?P=FILM%202320',
+  },
+  {
+    code: 'MATH 2320 / AMTH 2320',
+    title: 'Advanced Linear Algebra with Applications',
+    href: 'https://catalog.yale.edu/search/?P=MATH%202320',
+  },
+  {
+    code: 'APHY 4700 / ECON 4446',
+    title: 'Statistical Methods with Applications in Science and Finance',
+    href: 'https://volga.eng.yale.edu/sites/default/files/files/Syllabus-aphy470-2019.pdf',
+  },
+  {
+    code: 'PHYS 1800 & PHYS 1810',
+    title: 'University Physics (year sequence)',
+    href: 'https://catalog.yale.edu/search/?P=PHYS%201800',
+  },
+  {
+    code: 'MATH 1200',
+    title: 'Calculus of Functions of Several Variables (multivariable calculus)',
+    href: 'https://catalog.yale.edu/search/?P=MATH%201200',
+  },
+  {
+    code: 'ECON 4456',
+    title: 'Private Equity Investing',
+    href: 'https://catalog.yale.edu/search/?P=ECON%204456',
+  },
+  {
+    code: 'ECON 4450',
+    title: 'Investment Analysis',
+    href: 'https://catalog.yale.edu/search/?P=ECON%204450',
+  },
+]
+
 const researchProjects = [
   {
     title:
@@ -298,6 +361,41 @@ export default function Home() {
         </div>
       </details>
 
+      <details className="fold classes" aria-label="Favorite Yale classes">
+        <summary className="fold-summary">
+          <span className="section-label">Classes</span>
+        </summary>
+        <div className="fold-body">
+          <ul className="books-list">
+            {favoriteYaleClasses.map((item) => (
+              <li key={`${item.code}-${item.title}`}>
+                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  <span className="books-title">{item.title}</span>
+                  <span className="books-author">{item.code}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="classes-footnote">
+            Codes and titles follow the{' '}
+            <a
+              href="https://catalog.yale.edu/ycps/courses/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Yale College Programs of Study
+            </a>
+            . Most rows link to Yale's catalog search; statistical methods links to a public departmental
+            syllabus PDF (year may differ from when I took the course). For live outlines and past syllabi, try{' '}
+            <a href="https://coursetable.com/" target="_blank" rel="noopener noreferrer">
+              CourseTable
+            </a>
+            . A few economics seminars have been renumbered (Investment Analysis is ECON 4450 in the current
+            catalog and may still appear as ECON 450 on older schedules).
+          </p>
+        </div>
+      </details>
+
       <details className="fold links" aria-label="Links">
         <summary className="fold-summary">
           <span className="section-label">Links</span>
@@ -352,8 +450,6 @@ export default function Home() {
           <p className="books-footnote">
             {
               "An asterisk means my personal life has intersected with the author's in some way, and I may appear in the book."
-            }
-            {
             }
           </p>
         </div>
