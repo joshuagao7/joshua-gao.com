@@ -183,9 +183,9 @@ const favoriteYaleClasses: {
     href: 'https://catalog.yale.edu/search/?P=ECON%202251',
   },
   {
-    code: 'MGT 541',
+    code: 'ECON 3361',
     title: 'Corporate Finance',
-    href: 'https://catalog.yale.edu/search/?P=MGT%20541',
+    href: 'https://catalog.yale.edu/search/?P=ECON%203361',
   },
   {
     code: 'ECON 2121',
