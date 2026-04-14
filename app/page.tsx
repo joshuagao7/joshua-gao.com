@@ -302,7 +302,7 @@ function YaleCourseBucket({
   courses: YaleFavoriteCourse[]
 }) {
   return (
-    <>
+    <div className="yale-course-column">
       <p className="subsection-label">{label}</p>
       <ul className="books-list">
         {courses.map((item) => (
@@ -314,7 +314,7 @@ function YaleCourseBucket({
           </li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }
 
@@ -520,13 +520,15 @@ export default function Home() {
           <span className="section-label">Yale College</span>
         </summary>
         <div className="fold-body">
-          <YaleCourseBucket label="Economics" bucketId="econ" courses={yaleCoursesEconomics} />
-          <YaleCourseBucket label="Engineering" bucketId="eng" courses={yaleCoursesEngineering} />
-          <YaleCourseBucket
-            label="Further exploration"
-            bucketId="explore"
-            courses={yaleCoursesExploration}
-          />
+          <div className="yale-courses-grid">
+            <YaleCourseBucket label="Economics" bucketId="econ" courses={yaleCoursesEconomics} />
+            <YaleCourseBucket label="Engineering" bucketId="eng" courses={yaleCoursesEngineering} />
+            <YaleCourseBucket
+              label="Further exploration"
+              bucketId="explore"
+              courses={yaleCoursesExploration}
+            />
+          </div>
           <p className="classes-footnote">
             Each line shows Yale College Programs of Study–style numbers (four digits where the bulletin uses
             them). Cross-listed subjects are written out in full (for example APHY 4700 / ECON 4446). My
