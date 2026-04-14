@@ -1,0 +1,67 @@
+{
+  "papers": [
+    {
+      "id": "paper-1",
+      "title": "Attention Is All You Need",
+      "authors": ["Ashish Vaswani", "Noam Shazeer", "Niki Parmar"],
+      "year": 2017,
+      "url": "https://arxiv.org/abs/1706.03762",
+      "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms.",
+      "tags": ["AI", "Machine Learning", "NLP", "Transformers"],
+      "connections": ["paper-2", "paper-3"]
+    },
+    {
+      "id": "paper-2",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers",
+      "authors": ["Jacob Devlin", "Ming-Wei Chang", "Kenton Lee"],
+      "year": 2018,
+      "url": "https://arxiv.org/abs/1810.04805",
+      "abstract": "We introduce BERT, a method for pre-training language representations which obtains state-of-the-art results on a wide array of natural language processing tasks.",
+      "tags": ["AI", "NLP", "Transformers", "BERT"],
+      "connections": ["paper-1", "paper-4"]
+    },
+    {
+      "id": "paper-3",
+      "title": "GPT-3: Language Models are Few-Shot Learners",
+      "authors": ["Tom B. Brown", "Benjamin Mann", "Nick Ryder"],
+      "year": 2020,
+      "url": "https://arxiv.org/abs/2005.14165",
+      "abstract": "We train GPT-3, an autoregressive language model with 175 billion parameters, and test its performance in the few-shot setting.",
+      "tags": ["AI", "NLP", "Transformers", "GPT"],
+      "connections": ["paper-1", "paper-4", "paper-5"]
+    },
+    {
+      "id": "paper-4",
+      "title": "Language Models are Unsupervised Multitask Learners",
+      "authors": ["Alec Radford", "Jeffrey Wu", "Rewon Child"],
+      "year": 2019,
+      "url": "https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
+      "abstract": "We demonstrate that large language models, trained with sufficient data and compute, can perform well on many tasks without task-specific training.",
+      "tags": ["AI", "NLP", "GPT", "Language Models"],
+      "connections": ["paper-2", "paper-3"]
+    },
+    {
+      "id": "paper-5",
+      "title": "Scaling Laws for Neural Language Models",
+      "authors": ["Jared Kaplan", "Sam McCandlish", "Tom Henighan"],
+      "year": 2020,
+      "url": "https://arxiv.org/abs/2001.08361",
+      "abstract": "We study empirical scaling laws for language model performance on the cross-entropy loss.",
+      "tags": ["AI", "Machine Learning", "Language Models", "Scaling"],
+      "connections": ["paper-3", "paper-6"]
+    },
+    {
+      "id": "paper-6",
+      "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+      "authors": ["Dzmitry Bahdanau", "Kyunghyun Cho", "Yoshua Bengio"],
+      "year": 2014,
+      "url": "https://arxiv.org/abs/1409.0473",
+      "abstract": "We propose a new architecture for neural machine translation that learns to align and translate jointly.",
+      "tags": ["AI", "Machine Learning", "NLP", "Neural Networks"],
+      "connections": ["paper-1", "paper-5"]
+    }
+  ]
+}
+
+
+
