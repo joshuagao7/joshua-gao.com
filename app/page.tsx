@@ -115,7 +115,7 @@ const papers = [
   },
   {
     title: 'Pressure Plates: Can Computers be Taught to Detect Jumps?',
-    meta: 'Article · PDF',
+    meta: 'Thesis · PDF',
     href: '/papers/pressure-plates.pdf',
   },
 ]
@@ -252,7 +252,7 @@ export default function Home() {
     <main className="page">
       <h1 className="name">Joshua Gao</h1>
 
-      <details className="fold projects" aria-label="Projects">
+      <details className="fold projects" aria-label="Projects" open>
         <summary className="fold-summary">
           <span className="section-label">Projects</span>
         </summary>
@@ -287,7 +287,6 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <p className="subsection-label">Patents</p>
           <ul className="books-list">
             {patents.map((patent) => (
               <li key={patent.title}>
