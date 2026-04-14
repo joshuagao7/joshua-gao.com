@@ -227,6 +227,51 @@ const favoriteYaleClasses: {
     title: 'Mechanical Engineering III: Dynamics',
     href: 'https://catalog.yale.edu/search/?P=MENG%203323',
   },
+  {
+    code: 'SPAN 1100',
+    title: 'Elementary Spanish I',
+    href: 'https://catalog.yale.edu/search/?P=SPAN%201100',
+  },
+  {
+    code: 'SPAN 1200',
+    title: 'Elementary Spanish II',
+    href: 'https://catalog.yale.edu/search/?P=SPAN%201200',
+  },
+  {
+    code: 'SPAN 1300',
+    title: 'Intermediate Spanish I',
+    href: 'https://catalog.yale.edu/search/?P=SPAN%201300',
+  },
+  {
+    code: 'PHYS 1650L',
+    title: 'General Physics Laboratory',
+    href: 'https://catalog.yale.edu/search/?P=PHYS%201650L',
+  },
+  {
+    code: 'MATH 1120',
+    title: 'Calculus of Functions of One Variable I',
+    href: 'https://catalog.yale.edu/search/?P=MATH%201120',
+  },
+  {
+    code: 'MATH 2220 / AMTH 2220',
+    title: 'Linear Algebra with Applications',
+    href: 'https://catalog.yale.edu/search/?P=MATH%202220',
+  },
+  {
+    code: 'ECON 2123',
+    title: 'Intermediate Data Analysis and Econometrics',
+    href: 'https://catalog.yale.edu/search/?P=ECON%202123',
+  },
+  {
+    code: 'MENG 2050',
+    title: 'Computer-Aided Engineering',
+    href: 'https://catalog.yale.edu/search/?P=MENG%202050',
+  },
+  {
+    code: 'ENAS 1300',
+    title: 'Introduction to Computing for Engineers and Scientists',
+    href: 'https://catalog.yale.edu/search/?P=ENAS%201300',
+  },
 ]
 
 const researchProjects = [
@@ -426,9 +471,9 @@ export default function Home() {
         </div>
       </details>
 
-      <details className="fold classes" aria-label="Favorite Yale classes">
+      <details className="fold classes" aria-label="Yale College">
         <summary className="fold-summary">
-          <span className="section-label">Classes</span>
+          <span className="section-label">Yale College</span>
         </summary>
         <div className="fold-body">
           <ul className="books-list">
@@ -458,7 +503,9 @@ export default function Home() {
             . Yale has renumbered some courses over time: Investment Analysis is ECON 4450 (often ECON 450 on
             older schedules); intermediate micro and macro are ECON 2121 and ECON 2122 (often ECON 121 / ECON
             122); game theory is ECON 2259 / GLBL 2159 (Open Yale and older schedules used ECON 159); Daily
-            Themes is ENGL 3450 (formerly ENGL 450); ENAS 1180 continues the former ENAS 118 numbering.
+            Themes is ENGL 3450 (formerly ENGL 450); ENAS 1180 continues the former ENAS 118 numbering; Spanish
+            uses four-digit codes such as SPAN 1100 (older schedules may show SPAN 110). The physics lab listed
+            is the general intro lab (PHYS 1650L) paired with the standard intro lecture sequences.
           </p>
         </div>
       </details>
