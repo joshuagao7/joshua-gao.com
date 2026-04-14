@@ -162,6 +162,71 @@ const favoriteYaleClasses: {
     title: 'Investment Analysis',
     href: 'https://catalog.yale.edu/search/?P=ECON%204450',
   },
+  {
+    code: 'ENAS 1180',
+    title: 'Introduction to Engineering, Innovation, and Design',
+    href: 'https://catalog.yale.edu/search/?P=ENAS%201180',
+  },
+  {
+    code: 'ENGL 3450',
+    title: 'Daily Themes',
+    href: 'https://catalog.yale.edu/search/?P=ENGL%203450',
+  },
+  {
+    code: 'ECON 2259 / GLBL 2159',
+    title: 'Game Theory',
+    href: 'https://catalog.yale.edu/search/?P=ECON%202259',
+  },
+  {
+    code: 'ECON 2251',
+    title: 'Financial Economics',
+    href: 'https://catalog.yale.edu/search/?P=ECON%202251',
+  },
+  {
+    code: 'MGT 541',
+    title: 'Corporate Finance',
+    href: 'https://catalog.yale.edu/search/?P=MGT%20541',
+  },
+  {
+    code: 'ECON 2121',
+    title: 'Intermediate Microeconomics',
+    href: 'https://catalog.yale.edu/search/?P=ECON%202121',
+  },
+  {
+    code: 'ECON 2122',
+    title: 'Intermediate Macroeconomics',
+    href: 'https://catalog.yale.edu/search/?P=ECON%202122',
+  },
+  {
+    code: 'MGT 612 / ENV 632',
+    title: 'Social Entrepreneurship Lab',
+    href: 'https://catalog.yale.edu/search/?P=MGT%20612',
+  },
+  {
+    code: 'MENG 3422',
+    title: 'Mechanical Engineering II: Fluid Mechanics',
+    href: 'https://catalog.yale.edu/search/?P=MENG%203422',
+  },
+  {
+    code: 'MENG 2511',
+    title: 'Thermodynamics for Mechanical Engineers',
+    href: 'https://catalog.yale.edu/search/?P=MENG%202511',
+  },
+  {
+    code: 'ENAS 1940',
+    title: 'Ordinary and Partial Differential Equations with Applications',
+    href: 'https://catalog.yale.edu/search/?P=ENAS%201940',
+  },
+  {
+    code: 'MENG 2311',
+    title: 'Mechanical Engineering I: Strength and Deformation of Mechanical Elements',
+    href: 'https://catalog.yale.edu/search/?P=MENG%202311',
+  },
+  {
+    code: 'MENG 3323',
+    title: 'Mechanical Engineering III: Dynamics',
+    href: 'https://catalog.yale.edu/search/?P=MENG%203323',
+  },
 ]
 
 const researchProjects = [
@@ -390,8 +455,10 @@ export default function Home() {
             <a href="https://coursetable.com/" target="_blank" rel="noopener noreferrer">
               CourseTable
             </a>
-            . A few economics seminars have been renumbered (Investment Analysis is ECON 4450 in the current
-            catalog and may still appear as ECON 450 on older schedules).
+            . Yale has renumbered some courses over time: Investment Analysis is ECON 4450 (often ECON 450 on
+            older schedules); intermediate micro and macro are ECON 2121 and ECON 2122 (often ECON 121 / ECON
+            122); game theory is ECON 2259 / GLBL 2159 (Open Yale and older schedules used ECON 159); Daily
+            Themes is ENGL 3450 (formerly ENGL 450); ENAS 1180 continues the former ENAS 118 numbering.
           </p>
         </div>
       </details>
