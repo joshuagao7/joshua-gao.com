@@ -101,16 +101,20 @@ const booksList = [
   },
 ]
 
-/** Yale catalog / CourseTable–aligned codes; economics seminars use current YCPS numbering. */
+/**
+ * Course numbers shown are as on the Yale transcript when the course appears there; hrefs use Yale
+ * catalog search (often the current four-digit listing). In-progress lines on the transcript may omit
+ * until the term posts.
+ */
 const favoriteYaleClasses: {
   code: string
   title: string
   href: string
 }[] = [
   {
-    code: 'MGT 641',
+    code: 'ECON 6672',
     title: 'Behavioral Finance',
-    href: 'https://catalog.yale.edu/search/?P=MGT%20641',
+    href: 'https://catalog.yale.edu/search/?P=ECON%206672',
   },
   {
     code: 'ARCH 2000',
@@ -118,37 +122,37 @@ const favoriteYaleClasses: {
     href: 'https://catalog.yale.edu/search/?P=ARCH%202000',
   },
   {
-    code: 'ART 1838',
-    title: 'Digital Photography: Seeing in Color',
-    href: 'https://catalog.yale.edu/search/?P=ART%201838',
+    code: 'ART 138',
+    title: 'Digital Photography',
+    href: 'https://catalog.yale.edu/search/?P=ART%20138',
   },
   {
-    code: 'FILM 1620 / ART 1942',
+    code: 'ART 142',
     title: 'Introductory Documentary Filmmaking',
-    href: 'https://catalog.yale.edu/search/?P=FILM%201620',
+    href: 'https://catalog.yale.edu/search/?P=ART%20142',
   },
   {
-    code: 'FILM 2320',
-    title: 'Classical Hollywood Narrative, 1920–1960',
-    href: 'https://catalog.yale.edu/search/?P=FILM%202320',
+    code: 'THST 241',
+    title: 'Classical Hollywood Narrative',
+    href: 'https://catalog.yale.edu/search/?P=THST%20241',
   },
   {
-    code: 'MATH 2320 / AMTH 2320',
+    code: 'MATH 232 / MATH 2320',
     title: 'Advanced Linear Algebra with Applications',
     href: 'https://catalog.yale.edu/search/?P=MATH%202320',
   },
   {
-    code: 'APHY 4700 / ECON 4446',
+    code: 'APHY 4700',
     title: 'Statistical Methods with Applications in Science and Finance',
     href: 'https://volga.eng.yale.edu/sites/default/files/files/Syllabus-aphy470-2019.pdf',
   },
   {
-    code: 'PHYS 1800 & PHYS 1810',
+    code: 'PHYS 180 & PHYS 181',
     title: 'University Physics (year sequence)',
     href: 'https://catalog.yale.edu/search/?P=PHYS%201800',
   },
   {
-    code: 'MATH 1200',
+    code: 'MATH 120',
     title: 'Calculus of Functions of Several Variables (multivariable calculus)',
     href: 'https://catalog.yale.edu/search/?P=MATH%201200',
   },
@@ -163,29 +167,29 @@ const favoriteYaleClasses: {
     href: 'https://catalog.yale.edu/search/?P=ECON%204450',
   },
   {
-    code: 'ENAS 1180',
+    code: 'ENAS 118',
     title: 'Introduction to Engineering, Innovation, and Design',
     href: 'https://catalog.yale.edu/search/?P=ENAS%201180',
   },
   {
-    code: 'ENGL 3450',
+    code: 'ENGL 450',
     title: 'Daily Themes',
     href: 'https://catalog.yale.edu/search/?P=ENGL%203450',
   },
   {
-    code: 'ECON 2259 / GLBL 2159',
+    code: 'ECON 159',
     title: 'Game Theory',
-    href: 'https://catalog.yale.edu/search/?P=ECON%202259',
+    href: 'https://catalog.yale.edu/search/?P=ECON%20159',
   },
   {
-    code: 'ECON 2251',
+    code: 'ECON 251',
     title: 'Financial Economics',
-    href: 'https://catalog.yale.edu/search/?P=ECON%202251',
+    href: 'https://catalog.yale.edu/search/?P=ECON%20251',
   },
   {
-    code: 'ECON 3361',
+    code: 'ECON 361',
     title: 'Corporate Finance',
-    href: 'https://catalog.yale.edu/search/?P=ECON%203361',
+    href: 'https://catalog.yale.edu/search/?P=ECON%20361',
   },
   {
     code: 'ECON 2121',
@@ -193,12 +197,12 @@ const favoriteYaleClasses: {
     href: 'https://catalog.yale.edu/search/?P=ECON%202121',
   },
   {
-    code: 'ECON 2122',
+    code: 'ECON 122',
     title: 'Intermediate Macroeconomics',
-    href: 'https://catalog.yale.edu/search/?P=ECON%202122',
+    href: 'https://catalog.yale.edu/search/?P=ECON%20122',
   },
   {
-    code: 'MGT 612 / ENV 632',
+    code: 'MGT 612',
     title: 'Social Entrepreneurship Lab',
     href: 'https://catalog.yale.edu/search/?P=MGT%20612',
   },
@@ -208,67 +212,67 @@ const favoriteYaleClasses: {
     href: 'https://catalog.yale.edu/search/?P=MENG%203422',
   },
   {
-    code: 'MENG 2511',
+    code: 'MENG 211',
     title: 'Thermodynamics for Mechanical Engineers',
-    href: 'https://catalog.yale.edu/search/?P=MENG%202511',
+    href: 'https://catalog.yale.edu/search/?P=MENG%20211',
   },
   {
-    code: 'ENAS 1940',
+    code: 'ENAS 194',
     title: 'Ordinary and Partial Differential Equations with Applications',
-    href: 'https://catalog.yale.edu/search/?P=ENAS%201940',
+    href: 'https://catalog.yale.edu/search/?P=ENAS%20194',
   },
   {
-    code: 'MENG 2311',
+    code: 'MENG 280',
     title: 'Mechanical Engineering I: Strength and Deformation of Mechanical Elements',
-    href: 'https://catalog.yale.edu/search/?P=MENG%202311',
+    href: 'https://catalog.yale.edu/search/?P=MENG%20280',
   },
   {
-    code: 'MENG 3323',
+    code: 'MENG 383',
     title: 'Mechanical Engineering III: Dynamics',
-    href: 'https://catalog.yale.edu/search/?P=MENG%203323',
+    href: 'https://catalog.yale.edu/search/?P=MENG%20383',
   },
   {
-    code: 'SPAN 1100',
+    code: 'SPAN 110',
     title: 'Elementary Spanish I',
-    href: 'https://catalog.yale.edu/search/?P=SPAN%201100',
+    href: 'https://catalog.yale.edu/search/?P=SPAN%20110',
   },
   {
-    code: 'SPAN 1200',
+    code: 'SPAN 120',
     title: 'Elementary Spanish II',
-    href: 'https://catalog.yale.edu/search/?P=SPAN%201200',
+    href: 'https://catalog.yale.edu/search/?P=SPAN%20120',
   },
   {
-    code: 'SPAN 1300',
+    code: 'SPAN 130',
     title: 'Intermediate Spanish I',
-    href: 'https://catalog.yale.edu/search/?P=SPAN%201300',
+    href: 'https://catalog.yale.edu/search/?P=SPAN%20130',
   },
   {
-    code: 'PHYS 1650L',
+    code: 'PHYS 165L & PHYS 166L',
     title: 'General Physics Laboratory',
     href: 'https://catalog.yale.edu/search/?P=PHYS%201650L',
   },
   {
-    code: 'MATH 1120',
-    title: 'Calculus of Functions of One Variable I',
-    href: 'https://catalog.yale.edu/search/?P=MATH%201120',
+    code: 'MATH 115',
+    title: 'Calculus of Functions of One Variable II',
+    href: 'https://catalog.yale.edu/search/?P=MATH%201150',
   },
   {
-    code: 'MATH 2220 / AMTH 2220',
+    code: 'MATH 222',
     title: 'Linear Algebra with Applications',
-    href: 'https://catalog.yale.edu/search/?P=MATH%202220',
+    href: 'https://catalog.yale.edu/search/?P=MATH%20222',
   },
   {
-    code: 'ECON 2123',
-    title: 'Intermediate Data Analysis and Econometrics',
-    href: 'https://catalog.yale.edu/search/?P=ECON%202123',
+    code: 'ECON 117',
+    title: 'Introduction to Data Analysis and Econometrics',
+    href: 'https://catalog.yale.edu/search/?P=ECON%20117',
   },
   {
-    code: 'MENG 2050',
+    code: 'MENG 400',
     title: 'Computer-Aided Engineering',
-    href: 'https://catalog.yale.edu/search/?P=MENG%202050',
+    href: 'https://catalog.yale.edu/search/?P=MENG%20400',
   },
   {
-    code: 'ENAS 1300',
+    code: 'ENAS 130',
     title: 'Introduction to Computing for Engineers and Scientists',
     href: 'https://catalog.yale.edu/search/?P=ENAS%201300',
   },
@@ -487,25 +491,17 @@ export default function Home() {
             ))}
           </ul>
           <p className="classes-footnote">
-            Codes and titles follow the{' '}
-            <a
-              href="https://catalog.yale.edu/ycps/courses/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Yale College Programs of Study
-            </a>
-            . Most rows link to Yale's catalog search; statistical methods links to a public departmental
-            syllabus PDF (year may differ from when I took the course). For live outlines and past syllabi, try{' '}
+            Subject and course numbers match my Yale transcript for completed work; in-progress lines (for
+            example ARCH 2000, ECON 2121, ECON 4450, ECON 6672) appear on the transcript without grades until
+            the term closes. Yale’s bulletin often lists four-digit successors (ENAS 1180 for ENAS 118, MATH
+            1200 for MATH 120, and so on); links use catalog search and may open the updated listing. Corporate
+            finance is ECON 361 on my transcript (the economics department has also used ECON 3361 in the
+            catalog for this material). Statistical methods still links to a public departmental syllabus PDF.
+            For syllabi by term, try{' '}
             <a href="https://coursetable.com/" target="_blank" rel="noopener noreferrer">
               CourseTable
             </a>
-            . Yale has renumbered some courses over time: Investment Analysis is ECON 4450 (often ECON 450 on
-            older schedules); intermediate micro and macro are ECON 2121 and ECON 2122 (often ECON 121 / ECON
-            122); game theory is ECON 2259 / GLBL 2159 (Open Yale and older schedules used ECON 159); Daily
-            Themes is ENGL 3450 (formerly ENGL 450); ENAS 1180 continues the former ENAS 118 numbering; Spanish
-            uses four-digit codes such as SPAN 1100 (older schedules may show SPAN 110). The physics lab listed
-            is the general intro lab (PHYS 1650L) paired with the standard intro lecture sequences.
+            . General physics lab was taken as PHYS 166L and PHYS 165L in separate terms.
           </p>
         </div>
       </details>
