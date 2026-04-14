@@ -49,11 +49,11 @@ body {
   max-width: 52rem;
 }
 
-.fold.awards {
+.fold.stuff {
   max-width: 34rem;
 }
 
-.fold.reading {
+.fold.books {
   max-width: 32rem;
 }
 
@@ -61,12 +61,8 @@ body {
   max-width: 38rem;
 }
 
-.fold.press {
+.fold.links {
   max-width: 36rem;
-}
-
-.fold.sports {
-  max-width: 22rem;
 }
 
 .fold > summary {
@@ -91,44 +87,24 @@ details[open].fold {
   padding-bottom: 0.35rem;
 }
 
-.sports {
-  text-align: center;
-}
-
-.sports-note {
-  font-size: clamp(0.8rem, 1.6vw, 0.95rem);
-  color: #555;
-  font-style: italic;
-  margin-bottom: 1rem;
-}
-
-.sports-list {
-  list-style-position: inside;
-  padding-left: 0;
-  margin: 0;
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  line-height: 2;
-  letter-spacing: 0.04em;
-}
-
-.awards-list {
+.stuff-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.awards-list li + li {
+.stuff-list li + li {
   margin-top: 0.85rem;
 }
 
-.awards-title {
+.stuff-title {
   display: block;
   font-size: clamp(0.95rem, 2vw, 1.15rem);
   line-height: 1.45;
   letter-spacing: 0.02em;
 }
 
-.awards-year {
+.stuff-year {
   display: block;
   font-size: clamp(0.85rem, 1.7vw, 0.98rem);
   color: #555;

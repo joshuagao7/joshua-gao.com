@@ -1,20 +1,6 @@
 import Image from 'next/image'
 
-const sports = [
-  'Bouldering',
-  'Golf',
-  'Roundnet (Spikeball)',
-  'Sailing',
-  'Skiing',
-  'Snowboarding',
-  'Soccer',
-  'Squash',
-  'Surfing',
-  'Tennis',
-  'Track (300m)',
-]
-
-const awards = [
+const stuff = [
   { label: 'Franciscus Summer Travel Fellowship in Entrepreneurship', year: '2025' },
   { label: 'Tsai CITY Summer Fellow', year: '2025' },
   {
@@ -36,7 +22,7 @@ const awards = [
   { label: 'Gore Innovation Excellence Award', year: '2019' },
 ]
 
-const readingList = [
+const booksList = [
   {
     title: 'Analysis I',
     author: 'Terence Tao',
@@ -296,25 +282,25 @@ export default function Home() {
         </div>
       </section>
 
-      <details className="fold awards" aria-label="Awards and fellowships">
+      <details className="fold stuff" aria-label="Stuff">
         <summary className="fold-summary">
-          <span className="section-label">Awards</span>
+          <span className="section-label">Stuff</span>
         </summary>
         <div className="fold-body">
-          <ul className="awards-list">
-            {awards.map((item) => (
+          <ul className="stuff-list">
+            {stuff.map((item) => (
               <li key={item.label}>
-                <span className="awards-title">{item.label}</span>
-                <span className="awards-year">{item.year}</span>
+                <span className="stuff-title">{item.label}</span>
+                <span className="stuff-year">{item.year}</span>
               </li>
             ))}
           </ul>
         </div>
       </details>
 
-      <details className="fold press" aria-label="Articles">
+      <details className="fold links" aria-label="Links">
         <summary className="fold-summary">
-          <span className="section-label">In the news</span>
+          <span className="section-label">Links</span>
         </summary>
         <div className="fold-body">
           <ul className="books-list">
@@ -330,13 +316,13 @@ export default function Home() {
         </div>
       </details>
 
-      <details className="fold reading" aria-label="Reading list">
+      <details className="fold books" aria-label="Books">
         <summary className="fold-summary">
-          <span className="section-label">Reading</span>
+          <span className="section-label">Books</span>
         </summary>
         <div className="fold-body">
           <ul className="books-list">
-            {readingList.map((item) => (
+            {booksList.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
@@ -370,20 +356,6 @@ export default function Home() {
             {
             }
           </p>
-        </div>
-      </details>
-
-      <details className="fold sports" aria-label="Sports">
-        <summary className="fold-summary">
-          <span className="section-label">Sports</span>
-        </summary>
-        <div className="fold-body">
-          <p className="sports-note"></p>
-          <ol className="sports-list">
-            {sports.map((sport) => (
-              <li key={sport}>{sport}</li>
-            ))}
-          </ol>
         </div>
       </details>
     </main>
