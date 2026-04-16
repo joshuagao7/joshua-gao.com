@@ -5,13 +5,14 @@ const stuff = [
   { label: 'Tsai CITY Summer Fellow', year: '2025' },
   {
     label:
-      'Guest Lecturer, Columbia University M.S. in Technology Management — Stories from Early-Stage Customer Discovery at Vault',
+      'Guest Lecture, Columbia University M.S. in Technology Management',
     year: '2024',
   },
   { label: 'Praxis Emerging Founder', year: '2024' },
   { label: 'Yale China · Yuna Biscuit', year: '2024' },
   { label: 'MassChallenge', year: '2024' },
-  { label: 'VentureWell Propel Fellowship', year: '2024' },
+  { label: 'VentureWell', year: '2024' },
+  { label: 'NSF I-Corps', year: '2023' },
   { label: 'Thomas J. Watson Memorial Scholar', year: '2023' },
   { label: 'Yale Engineering Scholar', year: '2022' },
   { label: 'Opening Plenary Speaker, Nexus at the United Nations', year: '2019' },
@@ -318,7 +319,21 @@ function YaleCourseBucket({
   )
 }
 
-const researchProjects = [
+type ResearchProject = {
+  title: string
+  year: string
+  href: string
+  image: string
+  internal?: boolean
+}
+
+const researchProjects: ResearchProject[] = [
+  {
+    title: 'Corn Fields 2026',
+    year: '2026',
+    href: '/papers/corn-fields.pdf',
+    image: '/projects/corn-fields.png',
+  },
   {
     title:
       'Eigenjumps: analyzing human movement on tactile sensors via singular value decomposition and other linear algebra techniques',
@@ -480,9 +495,8 @@ export default function Home() {
               <a
                 className="project-slot"
                 href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${project.title} (opens in new tab)`}
+                {...(project.internal ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+                aria-label={project.internal ? project.title : `${project.title} (opens in new tab)`}
               >
                 <Image
                   src={project.image}
