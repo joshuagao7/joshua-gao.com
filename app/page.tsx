@@ -329,7 +329,19 @@ type ResearchProject = {
 
 const researchProjects: ResearchProject[] = [
   {
-    title: 'Corn Fields 2026',
+    title: 'Scales of Design',
+    year: '2026',
+    href: '/papers/scales-of-design.pdf',
+    image: '/projects/scales-of-design.png',
+  },
+  {
+    title: 'Tree House',
+    year: '2026',
+    href: '/papers/tree-house.pdf',
+    image: '/projects/tree-house.png',
+  },
+  {
+    title: 'Corn Fields',
     year: '2026',
     href: '/papers/corn-fields.pdf',
     image: '/projects/corn-fields.png',
