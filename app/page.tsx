@@ -329,10 +329,10 @@ type ResearchProject = {
 
 const researchProjects: ResearchProject[] = [
   {
-    title: 'Scales of Design',
+    title: 'Corn Fields',
     year: '2026',
-    href: '/papers/scales-of-design.pdf',
-    image: '/projects/scales-of-design.png',
+    href: '/papers/corn-fields.pdf',
+    image: '/projects/corn-fields.png',
   },
   {
     title: 'Tree House',
@@ -341,39 +341,39 @@ const researchProjects: ResearchProject[] = [
     image: '/projects/tree-house.png',
   },
   {
-    title: 'Corn Fields',
+    title: 'Scales of Design',
     year: '2026',
-    href: '/papers/corn-fields.pdf',
-    image: '/projects/corn-fields.png',
+    href: '/papers/scales-of-design.pdf',
+    image: '/projects/scales-of-design.png',
   },
   {
     title:
-      'Eigenjumps: analyzing human movement on tactile sensors via singular value decomposition and other linear algebra techniques',
+      'Eigenjumps',
     year: '2025',
     href: '/papers/eigenjumps.pdf',
     image: '/projects/eigenjumps.png',
   },
   {
-    title: 'Pressure Plates: Can Computers be Taught to Detect Jumps?',
+    title: 'Langevin Jump Detection',
     year: '2025',
     href: '/papers/pressure-plates.pdf',
     image: '/projects/pressure-plates.png',
   },
   {
     title:
-      'Vault One Mark I: Internal Validation Study of Uncalibrated Force-Sensing Mat for Vertical Jump Assessment',
+      'Force Plate Validation',
     year: '2025',
     href: '/papers/vault-one-mark-i.pdf',
     image: '/projects/vault-one-mark-i.png',
   },
   {
-    title: 'U.S. Patent — Force Sensors for Motion Assessment',
+    title: 'U.S. Patent — Force Sensors',
     year: '2025',
     href: '/papers/patent-force-sensors.pdf',
     image: '/projects/patent-force-sensors.png',
   },
   {
-    title: 'U.S. Patent — Method, Apparatus, and Systems for Fire Suppression Using Sound Waves',
+    title: 'U.S. Patent — Acoustic Fire Suppression',
     year: '2020',
     href: '/papers/patent-fire-sound.pdf',
     image: '/projects/patent-fire-sound.png',
