@@ -559,9 +559,9 @@ export default function Home() {
         </div>
       </details>
 
-      <details className="fold books" aria-label="Books">
+      <details className="fold books" aria-label="Reading">
         <summary className="fold-summary">
-          <span className="section-label">Books</span>
+          <span className="section-label">Reading</span>
         </summary>
         <div className="fold-body">
           <ul className="books-list">
