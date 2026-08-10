@@ -493,6 +493,22 @@ const articles = [
     source: 'Yale Daily News · March 4, 2026',
     href: 'https://yaledailynews.com/articles/yalies-plan-to-pack-a-bay-area-house-seeking-investors-for-start-ups',
   },
+  {
+    title:
+      'Forget Wall Street. Elite Students Are Spending Their Summers on Startup Dreams.',
+    source: 'The Wall Street Journal · July 5, 2026',
+    href: 'https://www.wsj.com/tech/ai/forget-wall-street-elite-students-are-spending-their-summers-on-startup-dreams-e7191994',
+  },
+  {
+    title: 'Vault Kinetics: Making elite-level biomechanics testing accessible',
+    source: 'Unicorner · July 6, 2026',
+    href: 'https://read.unicorner.news/p/vault-kinetics',
+  },
+  {
+    title: 'Yalies raised $17 million this summer in Nob Hill hacker house',
+    source: 'Gazetteer SF · July 30, 2026',
+    href: 'https://sf.gazetteer.co/yalies-raised-17-million-this-summer-in-nob-hill-hacker-house',
+  },
 ]
 
 export default function Home() {
