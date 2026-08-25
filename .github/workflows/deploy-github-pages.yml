@@ -1,11 +1,12 @@
-# Build static Next.js export and deploy to GitHub Pages.
-# Repo Settings → Pages → Source: GitHub Actions (required once).
+# DEPRECATED: the site has moved to Vercel (see DEPLOYMENT.md).
+# `output: 'export'` was removed from next.config.js so the Trip Planner /api routes work,
+# which means `npm run build` no longer emits an `out/` directory and this Pages build would
+# fail. The automatic push trigger is therefore disabled; this workflow is manual-only
+# (workflow_dispatch) and will be deleted once joshua-gao.com DNS is repointed to Vercel.
 
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (deprecated — moved to Vercel)
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
