@@ -32,6 +32,16 @@ template by `tools/make_dxfjs.py`), since there is no Python on Vercel. Its outp
 checked against the ezdxf-built shipped files: same layers, colours, entity counts and
 coordinates to 0.000000 mm.
 
+## Review comments
+
+The viewer's **Comments** panel is shared by everyone behind the gate: a comment names a
+layer, can carry a pin on the canvas (x, y in that layer's own mm frame), and records who
+wrote it and when; ticking it records who completed it and when. Stored in Supabase
+(`public.tracequoting_comments`, schema in `comments.sql`, RLS on with no policies) and
+reached only through `/api/tracequoting/comments` with the service-role key, so nothing is
+exposed client-side. Env: `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`. Locally the viewer keeps
+the same records in `viewer/comments.json` via `serve.py`.
+
 ## Routes
 
 | | |
@@ -40,3 +50,4 @@ coordinates to 0.000000 mm.
 | `POST /api/tracequoting/auth` | `{password}` → session cookie (30 days); `DELETE` clears it |
 | `GET /api/tracequoting/app` | the viewer HTML (cookie required) |
 | `GET /api/tracequoting/data/manifest.json`, `…/layers/<id>.json` | decrypted data (cookie required) |
+| `GET/POST/PATCH/DELETE /api/tracequoting/comments` | shared review comments (cookie required) |

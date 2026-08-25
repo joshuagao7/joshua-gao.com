@@ -38,7 +38,11 @@ export default function Gate() {
     <main className="tq-gate">
       <form className="tq-gate-form" onSubmit={submit}>
         <h1 className="tq-gate-title">Trace Quoting</h1>
-        <p className="tq-gate-sub">Private. Enter the password to continue.</p>
+        <p className="tq-gate-conf">
+          <b>Confidential.</b> Proprietary to Vault Kinetics Inc., disclosed under NDA.
+          Do not distribute, reproduce, or use except as that agreement permits.
+        </p>
+        <p className="tq-gate-sub">Enter the password to continue.</p>
         <input
           className="tq-gate-input"
           type="password"

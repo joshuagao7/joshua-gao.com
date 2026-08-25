@@ -6,7 +6,7 @@ import './tracequoting.css'
 
 // Unlisted page: no inbound links, and kept out of search indexes.
 export const metadata: Metadata = {
-  title: 'Trace Quoting',
+  title: 'Trace Quoting — Confidential',
   robots: { index: false, follow: false, nocache: true },
 }
 
