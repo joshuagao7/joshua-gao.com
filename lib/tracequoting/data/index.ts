@@ -11,5 +11,8 @@ const files: Record<string, () => Promise<{ enc: string }>> = {
   "layers/force-platform-ground-mylar-and-traces__final.json": () => import('./f_layers_force_platform_ground_mylar_and_traces_final_json'),
   "layers/drawing-assembly-2__carbon.json": () => import('./f_layers_drawing_assembly_2_carbon_json'),
   "layers/drawing-assembly-2__dielectric-top.json": () => import('./f_layers_drawing_assembly_2_dielectric_top_json'),
+  "layers/drawing-assembly-2.json": () => import('./f_layers_drawing_assembly_2_json'),
+  "layers/drawing-assembly.json": () => import('./f_layers_drawing_assembly_json'),
+  "layers/force-platform-ground-mylar-and-traces.json": () => import('./f_layers_force_platform_ground_mylar_and_traces_json'),
 }
 export default files

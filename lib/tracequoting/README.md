@@ -9,7 +9,7 @@ the print and cut work.
 - **Password gate.** `TRACEQUOTING_PASSWORD` (Vercel env). The cookie is an HMAC of the
   password, not the password. No default: unset means nobody gets in.
 - **Encrypted at rest.** This repository is public. Every data file — the viewer HTML,
-  the manifest, the nine layer files — is committed only as AES-256-GCM ciphertext under
+  the manifest, the twelve layer files — is committed only as AES-256-GCM ciphertext under
   `lib/tracequoting/data/`, keyed by `TRACEQUOTING_DATA_KEY` (Vercel env, 64 hex chars),
   and decrypted per request behind the gate. Plaintext geometry never enters git.
 - **Unlisted.** `robots: noindex`, `X-Robots-Tag` on every response, no inbound links.
@@ -22,8 +22,11 @@ node bin/tracequoting-sync.mjs            # reads ../Hardware/traces/viewer by d
 git add lib/tracequoting/data && git commit -m "TraceQuoting: sync" && git push
 ```
 
-The sync takes only layers that `tools/export_rev.py` stamped with a `stack` position,
-inlines `dxf.js` into the viewer, and rewrites `lib/tracequoting/data/` from scratch.
+The sync takes the layers that `tools/export_rev.py` stamped with a `stack` position,
+plus the three day-one originals (Drawing Assembly, Drawing Assembly-2, Force Platform —
+Ground Mylar and Traces) for the viewer's **Original designs** dropdown at the bottom of
+the layer list, inlines `dxf.js` into the viewer, and rewrites `lib/tracequoting/data/`
+from scratch.
 
 ## Downloads
 
