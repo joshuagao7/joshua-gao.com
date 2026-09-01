@@ -2,10 +2,10 @@
 const files: Record<string, () => Promise<{ enc: string }>> = {
   "index.html": () => import('./f_index_html'),
   "manifest.json": () => import('./f_manifest_json'),
-  "layers/drawing-assembly__cut-m16.json": () => import('./f_layers_drawing_assembly_cut_m16_json'),
+  "layers/drawing-assembly__cut.json": () => import('./f_layers_drawing_assembly_cut_json'),
   "layers/drawing-assembly__bridges-aligned.json": () => import('./f_layers_drawing_assembly_bridges_aligned_json'),
   "layers/drawing-assembly__carbon.json": () => import('./f_layers_drawing_assembly_carbon_json'),
-  "layers/drawing-assembly-2__unified-cut-m16.json": () => import('./f_layers_drawing_assembly_2_unified_cut_m16_json'),
+  "layers/drawing-assembly-2__unified-cut.json": () => import('./f_layers_drawing_assembly_2_unified_cut_json'),
   "layers/drawing-assembly-2__bridges-flush.json": () => import('./f_layers_drawing_assembly_2_bridges_flush_json'),
   "layers/drawing-assembly-2__dielectric-solid.json": () => import('./f_layers_drawing_assembly_2_dielectric_solid_json'),
   "layers/force-platform-ground-mylar-and-traces__final.json": () => import('./f_layers_force_platform_ground_mylar_and_traces_final_json'),
