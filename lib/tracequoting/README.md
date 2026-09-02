@@ -9,7 +9,7 @@ the print and cut work.
 - **Password gate.** `TRACEQUOTING_PASSWORD` (Vercel env). The cookie is an HMAC of the
   password, not the password. No default: unset means nobody gets in.
 - **Encrypted at rest.** This repository is public. Every data file — the viewer HTML,
-  the manifest, the twelve layer files — is committed only as AES-256-GCM ciphertext under
+  the manifest, the layer files, the webbed outlines — is committed only as AES-256-GCM ciphertext under
   `lib/tracequoting/data/`, keyed by `TRACEQUOTING_DATA_KEY` (Vercel env, 64 hex chars),
   and decrypted per request behind the gate. Plaintext geometry never enters git.
 - **Unlisted.** `robots: noindex`, `X-Robots-Tag` on every response, no inbound links.
@@ -25,15 +25,19 @@ git add lib/tracequoting/data && git commit -m "TraceQuoting: sync" && git push
 The sync takes the layers that `tools/export_rev.py` stamped with a `stack` position,
 plus the three day-one originals (Drawing Assembly, Drawing Assembly-2, Force Platform —
 Ground Mylar and Traces) for the viewer's **Original designs** dropdown at the bottom of
-the layer list, inlines `dxf.js` into the viewer, and rewrites `lib/tracequoting/data/`
-from scratch.
+the layer list, plus the three conductive layers' webbed outlines (`web/<id>.json`, what
+Download swaps in for the part when the **Webbing** switch is on), inlines `dxf.js` into
+the viewer, and rewrites `lib/tracequoting/data/` from scratch.
 
 ## Downloads
 
 The hosted viewer writes DXFs in the browser (`dxf.js`, generated from an ezdxf R2000
 template by `tools/make_dxfjs.py`), since there is no Python on Vercel. Its output was
 checked against the ezdxf-built shipped files: same layers, colours, entity counts and
-coordinates to 0.000000 mm.
+coordinates to 0.000000 mm. With **Webbing** on, a conductive layer's file is written from
+its webbed outline instead of the part, named `… [webbed].dxf`, and carries a `WEBBING`
+comment: it ties the traces into one sheet for handling and shorts them all together, so it
+is never a print file.
 
 ## Review comments
 
