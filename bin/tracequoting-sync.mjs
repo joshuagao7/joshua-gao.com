@@ -4,8 +4,8 @@
 //   node bin/tracequoting-sync.mjs [path/to/Hardware/traces/viewer]
 //
 // Reads the viewer (index.html + dxf.js), its manifest, the layers that are in the
-// Rev 2.2 stack (plus the day-one originals and the conductive layers' webbed
-// outlines), and writes them under lib/tracequoting/data/ as TypeScript modules
+// Rev 2.2 stack (plus the day-one originals and the swapped outlines of the
+// part-changing switches), and writes them under lib/tracequoting/data/ as TypeScript modules
 // holding AES-256-GCM ciphertext (key: TRACEQUOTING_DATA_KEY in .env.local). Nothing
 // readable is written into the repository. The site decrypts per request, behind the
 // password gate, in app/api/tracequoting/.
@@ -67,9 +67,9 @@ const site = { ...manifest, layers: ship }
 put('manifest.json', Buffer.from(JSON.stringify(site), 'utf8'), 'manifest')
 for (const L of ship) {
   put(L.file, readFileSync(join(src, L.file)), 'layer')
-  // the webbed outline (part + webbing bars unioned) a conductive layer's Download
-  // swaps in when the Webbing switch is on; fetched by the viewer only then
-  if (L.dxf?.web?.file) put(L.dxf.web.file, readFileSync(join(src, L.dxf.web.file)), 'webbed outline')
+  // the swapped outlines -- the whole part as a part-changing switch (Webbing, Ground
+  // tab up), or a combination of them, leaves it -- fetched by the viewer only then
+  for (const s of L.dxf?.swaps || []) put(s.file, readFileSync(join(src, s.file)), 'swapped outline')
 }
 
 writeFileSync(join(out, 'index.ts'),

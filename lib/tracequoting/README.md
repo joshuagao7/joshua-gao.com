@@ -25,8 +25,9 @@ git add lib/tracequoting/data && git commit -m "TraceQuoting: sync" && git push
 The sync takes the layers that `tools/export_rev.py` stamped with a `stack` position,
 plus the three day-one originals (Drawing Assembly, Drawing Assembly-2, Force Platform —
 Ground Mylar and Traces) for the viewer's **Original designs** dropdown at the bottom of
-the layer list, plus the three conductive layers' webbed outlines (`web/<id>.json`, what
-Download swaps in for the part when the **Webbing** switch is on), inlines `dxf.js` into
+the layer list, plus the swapped outlines (`swap/<id>.<keys>.json`: the whole part as a
+part-changing switch — **Webbing**, **Ground tab up** — or a combination of them leaves it,
+what Download swaps in for the part when that combination is on), inlines `dxf.js` into
 the viewer, and rewrites `lib/tracequoting/data/` from scratch.
 
 ## Downloads
@@ -37,7 +38,10 @@ checked against the ezdxf-built shipped files: same layers, colours, entity coun
 coordinates to 0.000000 mm. With **Webbing** on, a conductive layer's file is written from
 its webbed outline instead of the part, named `… [webbed].dxf`, and carries a `WEBBING`
 comment: it ties the traces into one sheet for handling and shorts them all together, so it
-is never a print file.
+is never a print file. With **Ground tab up** on, sheet 2's ground and unified cut are
+written from their extended outlines — the ground's two connector fingers carried past the
+column tips and joined by a bar, the cut following — named `… [ground tab up].dxf` with a
+`GROUND TAB UP` comment; the bar is snipped off at the end.
 
 ## Review comments
 
