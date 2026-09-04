@@ -43,6 +43,7 @@
   left: 0;
   width: 100vw;
   height: calc(100vh - var(--tp-tab-h, 56px));
+  height: calc(100dvh - var(--tp-tab-h, 56px)); /* phones: the visible height, under the browser's own bars */
   border: 0;
   background: #0f0f11;
 }
