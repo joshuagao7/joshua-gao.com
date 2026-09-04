@@ -7,7 +7,6 @@ const files: Record<string, () => Promise<{ enc: string }>> = {
   "swap/drawing-assembly__bridges-aligned.web.json": () => import('./f_swap_drawing_assembly_bridges_aligned_web_json'),
   "layers/drawing-assembly__carbon.json": () => import('./f_layers_drawing_assembly_carbon_json'),
   "layers/drawing-assembly-2__unified-cut.json": () => import('./f_layers_drawing_assembly_2_unified_cut_json'),
-  "swap/drawing-assembly-2__unified-cut.gtab.json": () => import('./f_swap_drawing_assembly_2_unified_cut_gtab_json'),
   "layers/drawing-assembly-2__bridges-flush.json": () => import('./f_layers_drawing_assembly_2_bridges_flush_json'),
   "swap/drawing-assembly-2__bridges-flush.web.json": () => import('./f_swap_drawing_assembly_2_bridges_flush_web_json'),
   "layers/drawing-assembly-2__dielectric-solid.json": () => import('./f_layers_drawing_assembly_2_dielectric_solid_json'),
